@@ -8,13 +8,11 @@ Inverse Conformal Risk Control (ICRC) is a distribution-free framework for const
 
 This repository provides a reference implementation of ICRC for robust linear optimization under box uncertainty sets, together with a post-hoc model selection procedure based on CREME.
 
----
 
 ## Motivation
 
 Many uncertainty quantification methods produce prediction intervals that are statistically valid but not necessarily useful for downstream decision making. In optimization applications, the ultimate goal is often to control the loss incurred by using a robust decision instead of the oracle decision that knows the true realization.
 
----
 
 ## Repository Structure
 
@@ -32,7 +30,6 @@ Many uncertainty quantification methods produce prediction intervals that are st
 └── README.md
 ```
 
----
 
 ## Core Components
 
@@ -53,7 +50,6 @@ Key outputs include:
 - confidence-adjusted upper bounds
 - feasible values of $\lambda$
 
----
 
 ### CREME
 
@@ -73,8 +69,6 @@ CREME performs:
 
 This allows selecting the largest feasible uncertainty radius without invalidating statistical guarantees.
 
----
-
 ### Robust Linear Program
 
 The repository includes a simple robust LP example.
@@ -93,16 +87,7 @@ $$
 
 Assuming box uncertainty
 
-$$
-\mathcal U_\lambda
-=
-\left\{
-y :
-\|y-y_0\|_\infty
-\le
-\lambda
-\right\},
-$$
+$$ \mathcal{U}_\lambda = \{ y : \|y-y_0\|_\infty \le \lambda \}, $$
 
 the robust counterpart becomes
 
@@ -114,8 +99,6 @@ y_0^\top z
 $$
 
 This reformulation is implemented using CVXPY.
-
----
 
 ## Installation
 
@@ -131,8 +114,6 @@ or
 conda install numpy scipy pandas matplotlib
 pip install cvxpy tqdm
 ```
-
----
 
 ## Quick Start
 
@@ -169,8 +150,6 @@ feasible = icrc.get_feasible_lambdas(
 )
 ```
 
----
-
 ## Example Workflow
 
 1. Generate calibration data.
@@ -191,8 +170,6 @@ demo.ipynb
 
 for a complete example.
 
----
-
 ## Dependencies
 
 - Python 3.9+
@@ -202,8 +179,6 @@ for a complete example.
 - CVXPY
 - Matplotlib
 - tqdm
-
----
 
 ## Notes
 
@@ -218,22 +193,18 @@ Future extensions may include:
 - distributionally robust optimization
 - online and sequential calibration
 
----
-
 ## Citation
 
 If you use this repository in academic work, please cite:
 
 ```bibtex
-@misc{zhou2026icrc,
-  title={Inverse Conformal Risk Control},
-  author={Wenbin Zhou},
-  year={2026}
+@misc{zhou2026calibratingdecisionrobustnessinverse,
+      title={Calibrating Decision Robustness via Inverse Conformal Risk Control}, 
+      author={Wenbin Zhou and Shixiang Zhu},
+      year={2026},
+      eprint={2510.07750},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML},
+      url={https://arxiv.org/abs/2510.07750}, 
 }
 ```
-
----
-
-## License
-
-MIT License
