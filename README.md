@@ -8,12 +8,6 @@ Inverse Conformal Risk Control (ICRC) is a distribution-free framework for const
 
 This repository provides a reference implementation of ICRC for robust linear optimization under box uncertainty sets, together with a post-hoc model selection procedure based on CREME.
 
-
-## Motivation
-
-Many uncertainty quantification methods produce prediction intervals that are statistically valid but not necessarily useful for downstream decision making. In optimization applications, the ultimate goal is often to control the loss incurred by using a robust decision instead of the oracle decision that knows the true realization.
-
-
 ## Repository Structure
 
 ```text
