@@ -14,51 +14,6 @@ This repository provides a reference implementation of ICRC for robust linear op
 
 Many uncertainty quantification methods produce prediction intervals that are statistically valid but not necessarily useful for downstream decision making. In optimization applications, the ultimate goal is often to control the loss incurred by using a robust decision instead of the oracle decision that knows the true realization.
 
-ICRC addresses this problem by selecting uncertainty set parameters according to decision quality criteria.
-
-Given an uncertainty realization $y$ and decision variable $z$:
-
-- Oracle decision:
-  
-  $$
-  z^\star(y)
-  =
-  \arg\min_{z\in\mathcal Z}
-  f(z,y)
-  $$
-
-- Robust decision under uncertainty set $\mathcal U_\lambda$:
-
-  $$
-  z_\lambda
-  =
-  \arg\min_{z\in\mathcal Z}
-  \sup_{y\in\mathcal U_\lambda}
-  f(z,y)
-  $$
-
-ICRC evaluates each uncertainty radius $\lambda$ according to:
-
-1. **Regret**
-   
-   $$
-   R_\lambda(y)
-   =
-   f(z_\lambda,y)
-   -
-   f(z^\star(y),y)
-   $$
-
-2. **Coverage**
-   
-   $$
-   C_\lambda(y)
-   =
-   \mathbf 1\{y\notin \mathcal U_\lambda\}
-   $$
-
-The framework then selects uncertainty sets that satisfy prescribed regret and coverage constraints with finite-sample guarantees.
-
 ---
 
 ## Repository Structure
